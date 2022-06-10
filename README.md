@@ -1,6 +1,7 @@
 # Godot_ExtendedConfigFile
 This scene is designed to work as a singleton in the autoload section of the Godot Engine and can be used to store Variant values on the filesystem using INI-style formatting.
 
+# Use-case examples:
 ```gdscript
 var dTestDefaultConfig: Dictionary = {
 	INVALID_SECTION = { # Will warn the user that this section is not supported and will be discarded
