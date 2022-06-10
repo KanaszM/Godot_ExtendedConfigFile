@@ -110,12 +110,12 @@ func Set_Default_SectionKeys(_default_sectionkeys: Dictionary) -> bool:
 	return true
 
 ### CONFIG FILE VALUE METHODS ###
-func Get_Value(_key: String, _not_found_value = null):
+func Get_Value(_key: String, _from_section: String = "VALUES", _not_found_value = null):
 	if not bEnableConfigFile:
 		push_warning("Config | Get_Value | The config file is disabled") ; return _not_found_value
-	if not nCFG.has_section_key("VALUES", _key):
-		printerr("Config | Get_Value | Missing VALUES section and/or key: " + _key) ; return _not_found_value
-	return nCFG.get_value("VALUES", _key, _not_found_value)
+	if not nCFG.has_section_key(_from_section, _key):
+		printerr("Config | Get_Value | Missing section / key: " + _from_section + " / " + _key) ; return _not_found_value
+	return nCFG.get_value(_from_section, _key, _not_found_value)
 
 func Set_Value(_key: String, _value, _alter_numeric_mode: int = -1) -> bool:
 	if not bEnableConfigFile:
