@@ -42,9 +42,10 @@ func _ready() -> void:
 	Config.Set_Value("Test01", 5, Config.NUMERIC_ALTER_MODE.DECREMENT) # This call will decrement the value stored on key Test01 by 5
 	Config.Set_Value("Test01", "33") # This call will try to store a string value on a key that has an default int value store. It will be discarded
 	Config.Set_Value("Test0100", "33") # This call will try to assign the "33" string value on a key that does not exist. It will be discarded
-	print(Config.Get_Value("Test01")) # This call will print the value stored in the Test01 key
+	print(Config.Get_Value("Test01")) # This call will print the VALUE stored in the Test01 key
+	print(Config.Get_Value("Test01"), "MIN") # This call will print the MIN value stored in the Test01 key
 	print(Config.Get_Value("Test0100")) # This call will print null as the key Test0100 is not registered in the ConfigFile
-	print(Config.Get_Value("Test0100", "NOT FOUND")) # This call will print "NOT FOUND" as the key Test0100 is not registered in the ConfigFile
+	print(Config.Get_Value("Test0100", "VALUES", "NOT FOUND")) # This call will print "NOT FOUND" as the key Test0100 is not registered in the ConfigFile
 	Config.Reset_Values() # Reset all VALUES to their DEFAULT counterparts
 
 # This method is designed to work in this scenario only
