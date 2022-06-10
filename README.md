@@ -2,7 +2,7 @@
 This script is designed to work as a singleton in the autoload section of the Godot Engine and can be used to store Variant values on the filesystem using INI-style formatting.
 
 ## Use-case examples:
-We must keep in mind that the "Config" script is set as singleton in order to be called globally.
+We must keep in mind that the `Config` script is set as singleton in order to be called globally.
 The ConfigFile is already opened by default on startup before the code bellow assinged as the Main Scene is run.
 
 For more details on how the ExtendedConfigFile works, read the comments in the source script.
