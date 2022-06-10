@@ -3,6 +3,9 @@ This scene is designed to work as a singleton in the autoload section of the God
 
 ## Use-case examples:
 ```gdscript
+# We must keep in mind that the Config scene is set as singleton in order to be called globally.
+# The ConfigFile is already opened by default on startup before the code bellow assinged as the Main Scene is run.
+
 var dTestDefaultConfig: Dictionary = {
 	INVALID_SECTION = { # Will warn the user that this section is not supported and will be discarded
 		Test01INV = 000},
